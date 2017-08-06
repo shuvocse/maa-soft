@@ -1,0 +1,28 @@
+<html  xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="ISO-8859-1"></meta>
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/chainType/createChain}" th:object="${chainTypeEntity}" method="post" >
+			<table>
+				<tr>
+					<td>Chain Type Name: </td>
+					<td><input type="text" th:field="*{chainName}" placeholder="Chain Type Name"/>
+					</td>
+				</tr>
+				<tr>
+					<td>Cut Point: </td>
+					<td><input type="text" th:field="*{cutPoint}" placeholder="Cut Point"/></td>
+				</tr>
+				<tr>
+					<td><input type="submit" ></input></td>
+					<td><a th:href="@{/chainType}"><button type="button">Back to List</button></a></td>
+				</tr>
+			</table>
+		</form>
+
+
+</body>
+</html>
