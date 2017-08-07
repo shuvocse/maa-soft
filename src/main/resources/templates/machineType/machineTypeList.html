@@ -1,0 +1,38 @@
+<html  xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="ISO-8859-1"></meta>
+<title>Insert title here</title>
+<style>
+			table, th, td {
+	    		border: 1px solid black;
+			}
+		</style>
+</head>
+<body>
+<a th:href="@{/machineType/createMachine}"><button>Add Machine Type</button></a>
+<table>
+			<thead>
+				<tr>
+					
+					<th>Id</th>
+					<th>Name</th>
+					<th>Chain Inch</th>
+					<th>Update</th>
+					<th>Delete</th>
+					
+				</tr>
+			</thead>
+			<tbody th:if = "${machineTypeList != null}">
+				<tr th:each = "machine: ${machineTypeList}">
+					<td th:text = "${machine.getMachineId()}"></td>
+					<td th:text = "${machine.getMachineName()}"></td>
+					<td th:text = "${machine.getChainInch()}"></td>
+					<td><a th:href="@{|/machineType/update/${machine.getMachineId()}|}"><button>Edit</button></a></td>
+					<td><a th:href="@{|/machineType/delete/${machine.getMachineId()}|}"><button>Delete</button></a></td>
+					
+				</tr>
+			</tbody>
+		</table>
+
+</body>
+</html>

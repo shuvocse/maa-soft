@@ -1,0 +1,28 @@
+<html  xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="ISO-8859-1"></meta>
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/machineType/createMachine}" th:object="${machineTypeEntity}" method="post" >
+			<table>
+				<tr>
+					<td>Machine Type Name: </td>
+					<td><input type="text" th:field="*{machineName}" placeholder="Machine Type Name"/>
+					</td>
+				</tr>
+				<tr>
+					<td>Chain Inch: </td>
+					<td><input type="text" th:field="*{chainInch}" placeholder="Chain Inch"/></td>
+				</tr>
+				<tr>
+					<td><input type="submit" ></input></td>
+					<td><a th:href="@{/machineType}"><button type="button">Back to List</button></a></td>
+				</tr>
+			</table>
+		</form>
+
+
+</body>
+</html>

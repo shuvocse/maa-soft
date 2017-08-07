@@ -19,6 +19,12 @@ public class MachineTypeEntity extends BaseInfo{
 	
 	public MachineTypeEntity() {
 	}
+	
+
+	public MachineTypeEntity(Integer machineId) {
+		this.machineId = machineId;
+	}
+
 
 	public MachineTypeEntity(String machineName, String chainInch) {
 		this.machineName = machineName;
