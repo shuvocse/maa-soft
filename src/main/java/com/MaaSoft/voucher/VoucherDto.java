@@ -3,9 +3,7 @@ package com.MaaSoft.voucher;
 public class VoucherDto {
 	private Integer customerId;
 	private Integer chainId;
-	private double cutPoint;
 	private Integer machineId;
-	private double chainInch;
 	private double vori;
 	private double ana;
 	private double roti;
@@ -22,14 +20,12 @@ public class VoucherDto {
 	}
 
 
-	public VoucherDto(Integer customerId, Integer chainId, double cutPoint, Integer machineId, double chainInch,
+	public VoucherDto(Integer customerId, Integer chainId, Integer machineId,
 			double vori, double ana, double roti, double point, double weightReceive, double weightReturn,
 			double estInch, double actInch, double estCutPoint, double actCutPoint) {
 		this.customerId = customerId;
 		this.chainId = chainId;
-		this.cutPoint = cutPoint;
 		this.machineId = machineId;
-		this.chainInch = chainInch;
 		this.vori = vori;
 		this.ana = ana;
 		this.roti = roti;
@@ -63,14 +59,7 @@ public class VoucherDto {
 	}
 
 
-	public double getCutPoint() {
-		return cutPoint;
-	}
-
-
-	public void setCutPoint(double cutPoint) {
-		this.cutPoint = cutPoint;
-	}
+	
 
 
 	public Integer getMachineId() {
@@ -82,15 +71,6 @@ public class VoucherDto {
 		this.machineId = machineId;
 	}
 
-
-	public double getChainInch() {
-		return chainInch;
-	}
-
-
-	public void setChainInch(double chainInch) {
-		this.chainInch = chainInch;
-	}
 
 
 	public double getVori() {
@@ -190,6 +170,15 @@ public class VoucherDto {
 
 	public void setActCutPoint(double actCutPoint) {
 		this.actCutPoint = actCutPoint;
+	}
+
+
+	@Override
+	public String toString() {
+		return "VoucherDto [customerId=" + customerId + ", chainId=" + chainId + ", machineId=" + machineId + ", vori="
+				+ vori + ", ana=" + ana + ", roti=" + roti + ", point=" + point + ", weightReceive=" + weightReceive
+				+ ", weightReturn=" + weightReturn + ", estInch=" + estInch + ", actInch=" + actInch + ", estCutPoint="
+				+ estCutPoint + ", actCutPoint=" + actCutPoint + "]";
 	}
 	
 	

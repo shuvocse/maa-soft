@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.MaaSoft.chainType.ChainTypeService;
 import com.MaaSoft.machineType.MachineTypeService;
@@ -29,8 +31,9 @@ public class voucherController {
 	
 	@PostMapping(value="/voucher")
 	public String createVoucher(Model model, VoucherDto voucherDto){
+		System.err.println(voucherDto.toString());
 		voucherService.saveVoucher(voucherDto);
-		return "";
+		return "home/home";
 	}
 
 }

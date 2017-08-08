@@ -31,13 +31,13 @@ public class VoucherEntity extends BaseInfo{
 	private double actInch;
 	private double estCutPoint;
 	private double actCutPoint;
-	@ManyToOne(optional = false, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToOne(optional = false)
 	@JoinColumn(name="chainId")
 	private ChainTypeEntity chainTypeEntity;
-	@ManyToOne(optional = false, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToOne(optional = false)
 	@JoinColumn(name="machineId")
 	private MachineTypeEntity machineTypeEntity;
-	@ManyToOne(optional = false, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToOne(optional = false)
 	@JoinColumn(name="customerId")
 	private CustomerEntity customerEntity;
 	public VoucherEntity() {
