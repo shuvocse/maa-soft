@@ -24,6 +24,10 @@ public class CustomerEntity extends BaseInfo{
 	}
 	public CustomerEntity() {
 	}
+	
+	public CustomerEntity(Integer customerId) {
+		this.customerId = customerId;
+	}
 	public Integer getCustomerId() {
 		return customerId;
 	}

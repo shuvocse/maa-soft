@@ -1,6 +1,8 @@
 package com.MaaSoft.voucher;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,26 +21,34 @@ public class VoucherEntity extends BaseInfo{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer voucherId;
+	private double vori;
+	private double ana;
+	private double roti;
+	private double point;
 	private double weightReceive;
 	private double weightReturn;
 	private double estInch;
 	private double actInch;
 	private double estCutPoint;
 	private double actCutPoint;
-	@ManyToOne
+	@ManyToOne(optional = false, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name="chainId")
 	private ChainTypeEntity chainTypeEntity;
-	@ManyToOne
+	@ManyToOne(optional = false, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name="machineId")
 	private MachineTypeEntity machineTypeEntity;
-	@ManyToOne
+	@ManyToOne(optional = false, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name="customerId")
 	private CustomerEntity customerEntity;
 	public VoucherEntity() {
 	}
-	public VoucherEntity(double weightReceive, double weightReturn, double estInch, double actInch, double estCutPoint,
-			double actCutPoint, ChainTypeEntity chainTypeEntity, MachineTypeEntity machineTypeEntity,
-			CustomerEntity customerEntity) {
+	public VoucherEntity(double vori, double ana, double roti, double point, double weightReceive, double weightReturn,
+			double estInch, double actInch, double estCutPoint, double actCutPoint, ChainTypeEntity chainTypeEntity,
+			MachineTypeEntity machineTypeEntity, CustomerEntity customerEntity) {
+		this.vori = vori;
+		this.ana = ana;
+		this.roti = roti;
+		this.point = point;
 		this.weightReceive = weightReceive;
 		this.weightReturn = weightReturn;
 		this.estInch = estInch;
@@ -49,11 +59,47 @@ public class VoucherEntity extends BaseInfo{
 		this.machineTypeEntity = machineTypeEntity;
 		this.customerEntity = customerEntity;
 	}
+	
+	
+	public VoucherEntity(double vori, double ana, double roti, double point, ChainTypeEntity chainTypeEntity,
+			MachineTypeEntity machineTypeEntity, CustomerEntity customerEntity) {
+		this.vori = vori;
+		this.ana = ana;
+		this.roti = roti;
+		this.point = point;
+		this.chainTypeEntity = chainTypeEntity;
+		this.machineTypeEntity = machineTypeEntity;
+		this.customerEntity = customerEntity;
+	}
 	public Integer getVoucherId() {
 		return voucherId;
 	}
 	public void setVoucherId(Integer voucherId) {
 		this.voucherId = voucherId;
+	}
+	public double getVori() {
+		return vori;
+	}
+	public void setVori(double vori) {
+		this.vori = vori;
+	}
+	public double getAna() {
+		return ana;
+	}
+	public void setAna(double ana) {
+		this.ana = ana;
+	}
+	public double getRoti() {
+		return roti;
+	}
+	public void setRoti(double roti) {
+		this.roti = roti;
+	}
+	public double getPoint() {
+		return point;
+	}
+	public void setPoint(double point) {
+		this.point = point;
 	}
 	public double getWeightReceive() {
 		return weightReceive;
