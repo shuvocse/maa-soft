@@ -10,8 +10,7 @@
 			<td><label>Chain Type: </label></td>
 			<td><select th:field="*{chainId}">
 					<option selected="selected" value="">Select</option>
-					<option th:each="chainList : ${chainTypeList}" th:value="${chainList.cutPoint}"
-						th:text="${chainList.chainName}"></option>
+					<option th:each="chainList : ${chainTypeList}" th:value="${chainList.chainId}" 	th:text="${chainList.chainName}"></option>
 			</select></td>
 		</tr>
 
@@ -19,8 +18,7 @@
 			<td><label>Machine Type: </label></td>
 			<td><select th:field="*{machineId}">
 					<option selected="selected" value="">Select</option>
-					<option th:each="machineList : ${machineTypeList}" th:value="${machineList.chainInch}"
-						th:text="${machineList.machineName}"></option>
+					<option th:each="machineList : ${machineTypeList}" th:value="${machineList.machineId}" th:text="${machineList.machineName}"></option>
 			</select></td>
 		</tr>
 		<tr>

@@ -15,7 +15,7 @@ public class ChainTypeEntity extends BaseInfo {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer chainId;
 	private String chainName;
-	private String cutPoint;
+	private double cutPoint;
 	
 	
 	public ChainTypeEntity() {
@@ -27,7 +27,7 @@ public class ChainTypeEntity extends BaseInfo {
 	}
 
 
-	public ChainTypeEntity(String chainName, String cutPoint) {
+	public ChainTypeEntity(String chainName, double cutPoint) {
 		this.chainName = chainName;
 		this.cutPoint = cutPoint;
 	}
@@ -48,11 +48,11 @@ public class ChainTypeEntity extends BaseInfo {
 		this.chainName = chainName;
 	}
 
-	public String getCutPoint() {
+	public double getCutPoint() {
 		return cutPoint;
 	}
 
-	public void setCutPoint(String cutPoint) {
+	public void setCutPoint(double cutPoint) {
 		this.cutPoint = cutPoint;
 	}
 

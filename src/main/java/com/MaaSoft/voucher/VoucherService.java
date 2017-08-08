@@ -14,10 +14,23 @@ public class VoucherService {
 
 	public void saveVoucher(VoucherDto voucherDto) {
 		
-		VoucherEntity voucherEntity=new VoucherEntity(voucherDto.getVori(), voucherDto.getAna(), voucherDto.getRoti(),
-				voucherDto.getPoint(), new ChainTypeEntity(voucherDto.getChainId()), new MachineTypeEntity(voucherDto.getMachineId()),
-				new CustomerEntity(voucherDto.getCustomerId()));
-		voucherEntity.setWeightReceive((voucherDto.getVori()*960)+ (voucherDto.getAna()*60)+(voucherDto.getRoti()*6)+voucherDto.getPoint());
+		VoucherEntity voucherEntity=new VoucherEntity();
+		voucherEntity.setAna(voucherDto.getAna());
+		voucherEntity.setVori(voucherDto.getVori());
+		voucherEntity.setRoti(voucherDto.getRoti());
+		voucherEntity.setPoint(voucherDto.getPoint());
+		voucherEntity.setWeightReceive((voucherDto.getVori()*960) + (voucherDto.getAna()*60) + (voucherDto.getRoti()*10) + voucherDto.getPoint());
+		
+		
+		
+		voucherEntity.setMachineTypeEntity(new MachineTypeEntity(voucherDto.getMachineId()));
+		double chainIn=voucherEntity.getMachineTypeEntity().getChainInch();
+		double estInch=(voucherEntity.getWeightReceive()/60)*chainIn;
+		voucherEntity.setEstInch(estInch);
+		
+		voucherEntity.setChainTypeEntity(new ChainTypeEntity(voucherDto.getChainId()));
+		double cutPo=voucherEntity.getChainTypeEntity().getCutPoint();
+		
 		voucherDao.saveVoucher(voucherEntity);
 		
 	}

@@ -15,7 +15,7 @@ public class MachineTypeEntity extends BaseInfo{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer machineId;
 	private String machineName;
-	private String chainInch;
+	private double chainInch;
 	
 	public MachineTypeEntity() {
 	}
@@ -26,7 +26,7 @@ public class MachineTypeEntity extends BaseInfo{
 	}
 
 
-	public MachineTypeEntity(String machineName, String chainInch) {
+	public MachineTypeEntity(String machineName, double chainInch) {
 		this.machineName = machineName;
 		this.chainInch = chainInch;
 	}
@@ -47,11 +47,11 @@ public class MachineTypeEntity extends BaseInfo{
 		this.machineName = machineName;
 	}
 
-	public String getChainInch() {
+	public double getChainInch() {
 		return chainInch;
 	}
 
-	public void setChainInch(String chainInch) {
+	public void setChainInch(double chainInch) {
 		this.chainInch = chainInch;
 	}
 	
