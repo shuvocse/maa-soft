@@ -2,16 +2,23 @@ package com.MaaSoft.voucher;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.MaaSoft.chainType.ChainTypeDao;
 import com.MaaSoft.chainType.ChainTypeEntity;
 import com.MaaSoft.customer.CustomerEntity;
+import com.MaaSoft.machineType.MachineTypeDao;
 import com.MaaSoft.machineType.MachineTypeEntity;
 
 @Service
 public class VoucherService {
 	@Autowired
+	private ChainTypeDao chainTypeDao;
+	@Autowired
 	private VoucherDao voucherDao;
-
+	@Autowired
+	private MachineTypeDao machineTypeDao;
+	@Transactional
 	public void saveVoucher(VoucherDto voucherDto) {
 		
 		VoucherEntity voucherEntity=new VoucherEntity();
@@ -27,17 +34,15 @@ public class VoucherService {
 		voucherEntity.setCustomerEntity(new CustomerEntity(100));
 		
 		
-		voucherEntity.setMachineTypeEntity(new MachineTypeEntity(voucherDto.getMachineId()));
-		double chainIn=0;
-		chainIn=voucherEntity.getMachineTypeEntity().getChainInch();
-		System.err.println("chain"+chainIn);
+		voucherEntity.setMachineTypeEntity(machineTypeDao.getMachineTypeById(voucherDto.getMachineId()));
+		double chainIn=voucherEntity.getMachineTypeEntity().getChainInch();
+
 		
-		double estInch=(voucherEntity.getWeightReceive()/60)*chainIn;
-		System.err.println("weight"+voucherEntity.getWeightReceive());
+		double estInch=((voucherEntity.getWeightReceive()/60)*chainIn);
 		System.err.println("inch"+estInch);
 		voucherEntity.setEstInch(estInch);
 		
-		voucherEntity.setChainTypeEntity(new ChainTypeEntity(voucherDto.getChainId()));
+		voucherEntity.setChainTypeEntity(chainTypeDao.getChainTypeById(voucherDto.getChainId()));
 		double cutPo=voucherEntity.getChainTypeEntity().getCutPoint();
 		double estCutPoint=estInch*cutPo;
 		voucherEntity.setEstCutPoint(estCutPoint);
