@@ -1,5 +1,6 @@
 package com.MaaSoft.customer;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,43 +16,66 @@ public class CustomerEntity extends BaseInfo{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer customerId;
 	private String customerName;
+	@Column(unique = true)
 	private String mobile;
 	private String address;
-	public CustomerEntity(String customerName, String mobile, String address) {
+	
+	public CustomerEntity() {
+	}
+
+	public CustomerEntity(Integer customerId, String customerName, String mobile, String address) {
+		this.customerId = customerId;
 		this.customerName = customerName;
 		this.mobile = mobile;
 		this.address = address;
 	}
-	public CustomerEntity() {
-	}
-	
-	public CustomerEntity(Integer customerId) {
-		this.customerId = customerId;
-	}
+
 	public Integer getCustomerId() {
 		return customerId;
 	}
+
 	public void setCustomerId(Integer customerId) {
 		this.customerId = customerId;
 	}
+
 	public String getCustomerName() {
 		return customerName;
 	}
+
 	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
 	}
+
 	public String getMobile() {
 		return mobile;
 	}
+
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
+
 	public String getAddress() {
 		return address;
 	}
+
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
+	public CustomerEntity(Integer customerId) {
+		this.customerId = customerId;
+	}
+
+	@Override
+	public String toString() {
+		return "CustomerEntity [customerId=" + customerId + ", customerName=" + customerName + ", mobile=" + mobile
+				+ ", address=" + address + "]";
+	}
+	
+	
+
+	
+	
 	
 	
 

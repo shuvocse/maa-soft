@@ -4,34 +4,47 @@
 <meta charset="ISO-8859-1"></meta>
 <title>Insert title here</title>
 </head>
-<body><form th:action="@{/voucher}" method="post" th:object="${voucherDto}">
+<body>
 	<table>
 		<tr>
-			<td><label>Chain Type: </label></td>
-			<td><select th:field="*{chainId}">
-					<option selected="selected" value="">Select</option>
-					<option th:each="chainList : ${chainTypeList}" th:value="${chainList.chainId}" 	th:text="${chainList.chainName}"></option>
-			</select></td>
-		</tr>
-
-		<tr>
-			<td><label>Machine Type: </label></td>
-			<td><select th:field="*{machineId}">
-					<option selected="selected" value="">Select</option>
-					<option th:each="machineList : ${machineTypeList}" th:value="${machineList.machineId}" th:text="${machineList.machineName}"></option>
-			</select></td>
-		</tr>
-		<tr>
-			<td><label>Weight:</label></td>
-			<td><input type="text" placeholder="V" th:field="*{vori}" /></td>
-			<td><input type="text" placeholder="A" th:field="*{ana}" /></td>
-			<td><input type="text" placeholder="R" th:field="*{roti}"/></td>
-			<td><input type="text" placeholder="Point" th:field="*{point}"/></td>
+			<td>
+			<input type="hidden" id="customerId" name="customerId"/>
+			<input type="hidden" id="voucherId" name="voucherId"/>
+				<label> Mobile Number :</label>
+				<input id="vmobile" name="vmobile" type="text"/>
+				<button type="button" onclick="fetchCustomer()" >Fetch</button>
+			</td>
+			
 		</tr>
 		
 		<tr>
-			<td><input type="submit"></input></td>
+			<td>
+				<label>Name :</label>
+				<input id="cName" name="cName" type="text"/>
+			</td>
 		</tr>
-	</table></form>
+		<tr>
+			<td>
+				<label> Total Weight :</label>
+				<input id="tWeight" name="tWeight" type="text"/>
+			</td>
+		</tr>
+
+		
+		
+		
+		<tr>
+			<td><button onclick="saveVoucher()" type="button">save</button></td>
+		</tr>
+	</table>
+	
+	<div style="display: none" id="item">fsdgdfhdfgdfgdf
+	gdf
+	gdfg
+	dfg
+	dfgdfg
+	dfgdfg</div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{/js/Voucher.js}"></script>
 </html>

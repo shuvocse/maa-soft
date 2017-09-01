@@ -22,18 +22,15 @@ public class voucherController {
 	
 	@GetMapping(value="/voucher")
 	public String createVoucher(Model model){
-		VoucherDto voucherDto=new VoucherDto();
-		model.addAttribute("voucherDto", voucherDto);
-		model.addAttribute("chainTypeList", chainTypeService.getAllChainType());
-		model.addAttribute("machineTypeList", machineTypeService.getAllMachineType());
 		return "voucher/createVoucher";
 	}
 	
-	@PostMapping(value="/voucher")
-	public String createVoucher(Model model, VoucherDto voucherDto){
-		System.err.println(voucherDto.toString());
-		voucherService.saveVoucher(voucherDto);
-		return "home/home";
+	@PostMapping(value="/voucher-save")
+	@ResponseBody
+	public VoucherEntity createVoucher(Model model,@RequestBody VoucherEntity voucherEntity){
+		System.err.println(voucherEntity.toString());
+		voucherService.saveVoucher(voucherEntity);
+		return voucherEntity;
 	}
 
 }
