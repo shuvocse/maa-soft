@@ -1,0 +1,56 @@
+<div th:fragment="addItem">
+
+	<div class="modal fade" id="modal-item">
+		<div class="modal-dialog" style="width: 50%; height: 60%">
+			<div class="modal-content col-sm-12">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+					<h3>Add New Item</h3>
+				</div>
+				<div class="modal-body">
+					<div class="row top-buffer">
+						<input id="itemId" type="hidden"/>
+						<label th:id="is_editItem" style="display: none" />
+						<label th:id="rowIndexItem" style="display: none" />
+
+						<label for="" class="col-sm-3 custom-form-lebel-right">Chain Type :</label>
+						<select id="" class="col-sm-3 custom-form-control">
+							<option value="">Select</option>
+							<option th:each="chain : ${chainTypeList}" th:value="${chain.chainId}" th:text="${chain.chainName}"></option>
+						</select>
+					</div>
+
+					<div class="row top-buffer">
+						<label for="" class="col-sm-3 custom-form-lebel-right">Machine Type :</label>
+						<select id="" class="col-sm-3 custom-form-control">
+							<option value="">Select</option>
+							<option th:each="machine : ${machineTypeList}" th:value="${machine.machineId}" th:text="${machine.machineName}"></option>
+						</select> 
+					</div>
+					<div class="row top-buffer">
+					 <label for="" class="col-sm-3 custom-form-lebel-right" >Inch :</label>
+                        <input id="item_inch" class="custom-form-control"/>
+					</div>
+					
+					
+					<div class="row top-buffer">
+					 <label for="" class="col-sm-3 custom-form-lebel-right" >Weight</label>
+                        <input id="item_weight" class="custom-form-control"/>
+					</div>
+					
+	</div>
+					<div class="modal-footer text-center">
+                	<button type="button" id="saveTrackDetails" class="btn btn-info btn-sm"  data-dismiss="modal"  >Save</button>
+                    <button type="button" onclick="resetTrackingDetails()" class="btn btn-danger btn-sm" data-dismiss="modal" >Close</button>
+                    
+                </div>
+				
+
+			</div>
+		</div>
+	</div>
+
+</div>

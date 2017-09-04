@@ -22,7 +22,10 @@ public class voucherController {
 	
 	@GetMapping(value="/voucher")
 	public String createVoucher(Model model){
-		return "voucher/createVoucher";
+		model.addAttribute("chainTypeList", chainTypeService.getAllChainType());
+		model.addAttribute("machineTypeList", machineTypeService.getAllMachineType());
+		model.addAttribute("body", "voucher/createVoucher");
+		return "layout/default";
 	}
 	
 	@PostMapping(value="/voucher-save")

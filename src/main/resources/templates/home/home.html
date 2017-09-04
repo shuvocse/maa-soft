@@ -1,12 +1,5 @@
-<html  xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<head>
-<meta charset="ISO-8859-1"></meta>
-<title>Insert title here</title>
-</head>
-<body>
-
+<div th:fragment="body">
 <a th:href="@{/chainType}"><button>Chain Type</button></a>
 <a th:href="@{/machineType}"><button>Machine Type</button></a>
 <a th:href="@{/voucher}"><button>Voucher</button></a>
-</body>
-</html>
+</div>
