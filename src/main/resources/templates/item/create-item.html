@@ -17,7 +17,7 @@
 						<label th:id="rowIndexItem" style="display: none" />
 
 						<label for="" class="col-sm-3 custom-form-lebel-right">Chain Type :</label>
-						<select id="" class="col-sm-3 custom-form-control">
+						<select id="itemChain" class="col-sm-3 custom-form-control">
 							<option value="">Select</option>
 							<option th:each="chain : ${chainTypeList}" th:value="${chain.chainId}" th:text="${chain.chainName}"></option>
 						</select>
@@ -25,7 +25,7 @@
 
 					<div class="row top-buffer">
 						<label for="" class="col-sm-3 custom-form-lebel-right">Machine Type :</label>
-						<select id="" class="col-sm-3 custom-form-control">
+						<select id="itemMachine" class="col-sm-3 custom-form-control">
 							<option value="">Select</option>
 							<option th:each="machine : ${machineTypeList}" th:value="${machine.machineId}" th:text="${machine.machineName}"></option>
 						</select> 
@@ -38,13 +38,17 @@
 					
 					<div class="row top-buffer">
 					 <label for="" class="col-sm-3 custom-form-lebel-right" >Weight</label>
-                        <input id="item_weight" class="custom-form-control"/>
+                       <div class="col-sm-5"> 
+                       	<input id="item_vori" class="col-sm-3"/>
+                        <input id="item_ana" class="col-sm-3"/>
+                        <input id="item_roti" class="col-sm-3"/>
+                        <input id="item_point" class="col-sm-3"/></div>
 					</div>
 					
 	</div>
 					<div class="modal-footer text-center">
-                	<button type="button" id="saveTrackDetails" class="btn btn-info btn-sm"  data-dismiss="modal"  >Save</button>
-                    <button type="button" onclick="resetTrackingDetails()" class="btn btn-danger btn-sm" data-dismiss="modal" >Close</button>
+                	<button type="button" id="saveItem" class="btn btn-info btn-sm"  data-dismiss="modal"  >Save</button>
+                    <button type="button" onclick="resetItem()" class="btn btn-danger btn-sm" data-dismiss="modal" >Close</button>
                     
                 </div>
 				

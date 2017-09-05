@@ -55,31 +55,15 @@
                     <table id="itemTable" class="table table-striped table-bordered"
                            cellspacing="0">
                         <thead>
-                        <tr id="trackingTabRowId_0">
+                        <tr id="itemTabRowId_0">
                             <th >Chain Type</th>
                             <th>Machine Type</th>
                             <th>Estimate Inch</th>
                             <th>Weight</th>
                             <th>Cut Point</th>
                             <th>Total Weight</th>
+                            <th>Action</th>
                         </tr>
-                       <!--  <tr th:if="${trackingDetails!=null}" th:each="trackDetails,stat:${trackingDetails}" th:id="'trackingTabRowId_'+${stat.count}">
-
-                            <td><label th:id="'viewTrackingDetailsId_' +${stat.count}" th:text="${trackDetails?.viewTrackingDetailsId}" style="display: none"></label>
-                                
-                                <label th:id="'tracking_name_'+${stat.count}" th:text="${trackDetails?.name}" ></label></td>
-                            <td><label th:id="'tracking_phone_'+${stat.count}" th:text="${trackDetails?.phone}"></label></td>
-                            <td><label th:id="'tracking_relation_'+${stat.count}" th:text="${trackDetails?.relation}"></label></td>
-                            
-                            <td><label th:id="'tracking_comment_'+${stat.count}" th:text="${trackDetails?.comment}"></label></td>
-                            <td><label th:id="'tracking_resAddress_'+${stat.count}" th:text="${trackDetails?.resAddress}"></label></td>
-                             <td><label th:id="'tracking_perAddress_'+${stat.count}" th:text="${trackDetails?.perAddress}"></label></td>
-                            <td th:if="${#strings.equals(param.cn[0],'Collection Officer')}"><button href="#" class="btn-success" th:onclick="'editTrackingDetails( ' +${stat.count}+ ')'" data-toggle="modal" data-target="#modal-tracking-details"><i class="fa fa-pencil" ></i></button>
-                                <button href="#" th:onclick="'deleteTrackingDetails(this,' +${stat.count}+ ')'"><i class="fa fa-times"></i></button></td>
-
-
-                           
-                        </tr>  -->
                         </thead>
                         <tbody>
 

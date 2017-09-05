@@ -7,7 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 import com.MaaSoft.configuration.BaseInfo;
 import com.MaaSoft.customer.CustomerEntity;
@@ -19,6 +18,8 @@ public class VoucherEntity extends BaseInfo{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer voucherId;
 	private double point;
+	private double totalEstCutPoint;
+	private double totalActCutPoint;
 	private double totalWeight;
 	private String sTotalWeight;
 	
@@ -28,54 +29,88 @@ public class VoucherEntity extends BaseInfo{
 	public VoucherEntity() {
 	}
 	
+	
 	public Integer getVoucherId() {
 		return voucherId;
 	}
+
 
 	public void setVoucherId(Integer voucherId) {
 		this.voucherId = voucherId;
 	}
 
+
 	public double getPoint() {
 		return point;
 	}
+
 
 	public void setPoint(double point) {
 		this.point = point;
 	}
 
+
+	public double getTotalEstCutPoint() {
+		return totalEstCutPoint;
+	}
+
+
+	public void setTotalEstCutPoint(double totalEstCutPoint) {
+		this.totalEstCutPoint = totalEstCutPoint;
+	}
+
+
+	public double getTotalActCutPoint() {
+		return totalActCutPoint;
+	}
+
+
+	public void setTotalActCutPoint(double totalActCutPoint) {
+		this.totalActCutPoint = totalActCutPoint;
+	}
+
+
 	public double getTotalWeight() {
 		return totalWeight;
 	}
+
 
 	public void setTotalWeight(double totalWeight) {
 		this.totalWeight = totalWeight;
 	}
 
+
 	public String getsTotalWeight() {
 		return sTotalWeight;
 	}
+
 
 	public void setsTotalWeight(String sTotalWeight) {
 		this.sTotalWeight = sTotalWeight;
 	}
 
+
 	public CustomerEntity getCustomerEntity() {
 		return customerEntity;
 	}
+
 
 	public void setCustomerEntity(CustomerEntity customerEntity) {
 		this.customerEntity = customerEntity;
 	}
 
-	public VoucherEntity(Integer voucherId, double point, double totalWeight, String sTotalWeight,
-			CustomerEntity customerEntity) {
+
+	public VoucherEntity(Integer voucherId, double point, double totalEstCutPoint, double totalActCutPoint,
+			double totalWeight, String sTotalWeight, CustomerEntity customerEntity) {
 		this.voucherId = voucherId;
 		this.point = point;
+		this.totalEstCutPoint = totalEstCutPoint;
+		this.totalActCutPoint = totalActCutPoint;
 		this.totalWeight = totalWeight;
 		this.sTotalWeight = sTotalWeight;
 		this.customerEntity = customerEntity;
 	}
+
 
 	@Override
 	public String toString() {
