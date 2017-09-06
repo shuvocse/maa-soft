@@ -21,6 +21,7 @@ function fetchCustomer(){
 }
 
 function saveVoucher(){
+	var link =$("#vLink").attr("href");
 	var customerId=$("#customerId").val();
 	var voucherId=$("#voucherId").val();
 	var mobile= $("#vmobile").val();
@@ -51,6 +52,7 @@ function saveVoucher(){
         success: function (data) {
         	$("#customerId").val(data.customerEntity.customerId);
         	$("#voucherId").val(data.voucherId);
+        	$("#vLink").attr("href",link+data.voucherId);
         	$("#item").show();
         },
         error:function (err) {

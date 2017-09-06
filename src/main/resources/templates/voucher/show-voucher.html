@@ -1,0 +1,19 @@
+<div th:fragment="body">
+	<div>
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td th:text="${voucher.customerEntity.customerName}"></td>
+			</tr>
+			<tr>
+				<td>Mobile No.:</td>
+				<td th:text="${voucher.customerEntity.mobile}"></td>
+			</tr>
+			<tr th:each="item : ${itemList}">
+				<td th:text="${item.machineTypeEntity.getMachineName()}"></td>
+			</tr>
+		</table>
+sdasd
+	</div>
+
+</div>

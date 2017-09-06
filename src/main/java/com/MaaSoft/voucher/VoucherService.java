@@ -24,6 +24,10 @@ public class VoucherService {
 		voucherDao.saveVoucher(voucherEntity);
 		
 	}
+	public VoucherEntity getVoucherById(int id) {
+		return voucherDao.getVoucherById(id);
+	}
+	
 
 	
 }
