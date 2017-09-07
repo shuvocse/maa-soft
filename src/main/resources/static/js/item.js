@@ -15,6 +15,7 @@ $(document).ready(function(){
 		 var roti			=	$("#item_roti").val();
 		 var point			=	$("#item_point").val();
 		 var weight			=	((vori*960)+(ana*60)+(roti*10)+point);
+		 var sWeight		=	(vori+'.'+ana+'.'+roti+'.'+point);
 		 var is_editItem 	=	$("#is_editItem").text();
 		 var rowIndexItem 	=	$("#rowIndexItem").text();
 		 
@@ -28,7 +29,8 @@ $(document).ready(function(){
 				 'ana' : ana,
 				 'roti' : roti,
 				 'point' : point,
-				 'weight' : weight
+				 'weight' : weight,
+				 'sWeight':sWeight
 				 
 		 };
 

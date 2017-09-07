@@ -10,10 +10,12 @@
 				<td th:text="${voucher.customerEntity.mobile}"></td>
 			</tr>
 			<tr th:each="item : ${itemList}">
-				<td th:text="${item.machineTypeEntity.getMachineName()}"></td>
+				<td th:text="${item.machineTypeEntity.MachineName}"></td>
+				<td th:text="${item.chainTypeEntity.chainName}"></td>
+				<td th:text="${item.sWeight}"></td>
 			</tr>
 		</table>
-sdasd
+
 	</div>
 
 </div>

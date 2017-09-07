@@ -24,6 +24,7 @@ public class ItemEntity extends BaseInfo{
 	private double ana;
 	private double roti;
 	private double point;
+	private String sWeight;
 	private String weight;
 	private String estCutPoint;
 	private double totalWeight;
@@ -43,7 +44,7 @@ public class ItemEntity extends BaseInfo{
 	public ItemEntity() {
 	}
 
-	public ItemEntity(Integer itemId, String estInch, double vori, double ana, double roti, double point, String weight,
+	public ItemEntity(Integer itemId, String estInch, double vori, double ana, double roti, double point,String sWeight, String weight,
 			String estCutPoint, double totalWeight, VoucherEntity voucherEntity, MachineTypeEntity machineTypeEntity,
 			ChainTypeEntity chainTypeEntity) {
 		this.itemId = itemId;
@@ -52,6 +53,7 @@ public class ItemEntity extends BaseInfo{
 		this.ana = ana;
 		this.roti = roti;
 		this.point = point;
+		this.sWeight = sWeight;
 		this.weight = weight;
 		this.estCutPoint = estCutPoint;
 		this.totalWeight = totalWeight;
@@ -106,6 +108,15 @@ public class ItemEntity extends BaseInfo{
 
 	public void setPoint(double point) {
 		this.point = point;
+	}
+	
+
+	public String getsWeight() {
+		return sWeight;
+	}
+
+	public void setsWeight(String sWeight) {
+		this.sWeight = sWeight;
 	}
 
 	public String getWeight() {
