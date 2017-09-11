@@ -26,7 +26,12 @@ function saveVoucher(){
 	var voucherId=$("#voucherId").val();
 	var mobile= $("#vmobile").val();
 	var name= $("#cName").val();
-	var totalWeight= $("#tWeight").val();
+	var v_vori=$("#v_vori").val();
+	var v_ana=$("#v_ana").val();
+	var v_roti=$("#v_roti").val();
+	var v_point=$("#v_point").val();
+	var totalWeight = ((v_vori*960)+(v_ana*60)+(v_roti*10)+v_point);
+	var sTotalWeight = (v_vori+'.'+ v_ana+'.'+ v_roti+'.'+v_point);
 	
 	var voucherData = {
 			'customerEntity':{
@@ -35,7 +40,13 @@ function saveVoucher(){
 				'customerName': name
 				},
 			'voucherId':voucherId,
-            'sTotalWeight': totalWeight,
+			'v_vori':v_vori,
+			'v_ana': v_ana,
+			'v_roti': v_roti,
+			'v_point': v_point,
+			'totalWeight': totalWeight,
+			'sTotalWeight' :sTotalWeight
+			
         };
 	 var JsonVoucherData = JSON.stringify(voucherData);
 

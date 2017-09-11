@@ -9,10 +9,24 @@
 				<td>Mobile No.:</td>
 				<td th:text="${voucher.customerEntity.mobile}"></td>
 			</tr>
+			
+			<tr>
+				<td>Receive Weight:</td>
+				<td th:text="${voucher.sTotalWeight}"></td>
+			</tr>
+			
 			<tr th:each="item : ${itemList}">
 				<td th:text="${item.machineTypeEntity.MachineName}"></td>
+				<td th:text="${item.estInch}"></td>
 				<td th:text="${item.chainTypeEntity.chainName}"></td>
 				<td th:text="${item.sWeight}"></td>
+				<td>
+				<div th:with="v=(${item.estCutPoint}/10)">
+					<div th:with="a=(${v})">
+					</div>
+				</div>
+				<span th:text="${c}"></span></td>
+				
 			</tr>
 		</table>
 

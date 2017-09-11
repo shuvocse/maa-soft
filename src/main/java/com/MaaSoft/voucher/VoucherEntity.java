@@ -18,7 +18,10 @@ public class VoucherEntity extends BaseInfo{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer voucherId;
 	private double point;
-	private double totalEstCutPoint;
+	private double v_vori;
+	private double v_ana;
+	private double v_roti;
+	private double v_point;
 	private double totalActCutPoint;
 	private double totalWeight;
 	private String sTotalWeight;
@@ -28,97 +31,89 @@ public class VoucherEntity extends BaseInfo{
 	private CustomerEntity customerEntity;
 	public VoucherEntity() {
 	}
-	
-	
+	public VoucherEntity(Integer voucherId, double point, double v_vori, double v_ana, double v_roti, double v_point,
+			double totalActCutPoint, double totalWeight, String sTotalWeight, CustomerEntity customerEntity) {
+		this.voucherId = voucherId;
+		this.point = point;
+		this.v_vori = v_vori;
+		this.v_ana = v_ana;
+		this.v_roti = v_roti;
+		this.v_point = v_point;
+		this.totalActCutPoint = totalActCutPoint;
+		this.totalWeight = totalWeight;
+		this.sTotalWeight = sTotalWeight;
+		this.customerEntity = customerEntity;
+	}
 	public Integer getVoucherId() {
 		return voucherId;
 	}
-
-
 	public void setVoucherId(Integer voucherId) {
 		this.voucherId = voucherId;
 	}
-
-
 	public double getPoint() {
 		return point;
 	}
-
-
 	public void setPoint(double point) {
 		this.point = point;
 	}
-
-
-	public double getTotalEstCutPoint() {
-		return totalEstCutPoint;
+	public double getV_vori() {
+		return v_vori;
 	}
-
-
-	public void setTotalEstCutPoint(double totalEstCutPoint) {
-		this.totalEstCutPoint = totalEstCutPoint;
+	public void setV_vori(double v_vori) {
+		this.v_vori = v_vori;
 	}
-
-
+	public double getV_ana() {
+		return v_ana;
+	}
+	public void setV_ana(double v_ana) {
+		this.v_ana = v_ana;
+	}
+	public double getV_roti() {
+		return v_roti;
+	}
+	public void setV_roti(double v_roti) {
+		this.v_roti = v_roti;
+	}
+	public double getV_point() {
+		return v_point;
+	}
+	public void setV_point(double v_point) {
+		this.v_point = v_point;
+	}
 	public double getTotalActCutPoint() {
 		return totalActCutPoint;
 	}
-
-
 	public void setTotalActCutPoint(double totalActCutPoint) {
 		this.totalActCutPoint = totalActCutPoint;
 	}
-
-
 	public double getTotalWeight() {
 		return totalWeight;
 	}
-
-
 	public void setTotalWeight(double totalWeight) {
 		this.totalWeight = totalWeight;
 	}
-
-
 	public String getsTotalWeight() {
 		return sTotalWeight;
 	}
-
-
 	public void setsTotalWeight(String sTotalWeight) {
 		this.sTotalWeight = sTotalWeight;
 	}
-
-
 	public CustomerEntity getCustomerEntity() {
 		return customerEntity;
 	}
-
-
 	public void setCustomerEntity(CustomerEntity customerEntity) {
 		this.customerEntity = customerEntity;
 	}
-
-
-	public VoucherEntity(Integer voucherId, double point, double totalEstCutPoint, double totalActCutPoint,
-			double totalWeight, String sTotalWeight, CustomerEntity customerEntity) {
-		this.voucherId = voucherId;
-		this.point = point;
-		this.totalEstCutPoint = totalEstCutPoint;
-		this.totalActCutPoint = totalActCutPoint;
-		this.totalWeight = totalWeight;
-		this.sTotalWeight = sTotalWeight;
-		this.customerEntity = customerEntity;
-	}
-
-
 	@Override
 	public String toString() {
-		return "VoucherEntity [voucherId=" + voucherId + ", point=" + point + ", totalWeight=" + totalWeight
-				+ ", sTotalWeight=" + sTotalWeight + ", customerEntity=" + customerEntity + "]";
+		return "VoucherEntity [voucherId=" + voucherId + ", point=" + point + ", v_vori=" + v_vori + ", v_ana=" + v_ana
+				+ ", v_roti=" + v_roti + ", v_point=" + v_point + ", totalActCutPoint=" + totalActCutPoint
+				+ ", totalWeight=" + totalWeight + ", sTotalWeight=" + sTotalWeight + ", customerEntity="
+				+ customerEntity + "]";
 	}
 	
 	
+
 	
 	
 

@@ -16,6 +16,7 @@ $(document).ready(function(){
 		 var point			=	$("#item_point").val();
 		 var weight			=	((vori*960)+(ana*60)+(roti*10)+point);
 		 var sWeight		=	(vori+'.'+ana+'.'+roti+'.'+point);
+		 var estCutPoint 	=	(($("#c_vori").val())*960)+(($("#c_ana").val())*60)+(($("#c_roti").val())*10)+($("#c_point").val());
 		 var is_editItem 	=	$("#is_editItem").text();
 		 var rowIndexItem 	=	$("#rowIndexItem").text();
 		 
@@ -30,7 +31,8 @@ $(document).ready(function(){
 				 'roti' : roti,
 				 'point' : point,
 				 'weight' : weight,
-				 'sWeight':sWeight
+				 'sWeight':sWeight,
+				 'estCutPoint' :estCutPoint
 				 
 		 };
 
@@ -65,8 +67,6 @@ $(document).ready(function(){
 	                   '<td><label id="item_inch_' + itemRowIndex + '">' + data.estInch + '</label></td>' +
 	                   '<td><label id="item_weight_' + itemRowIndex + '">' + data.vori+"." + data.ana+"."
 	                   + data.roti+"."+ data.point + '</label></td>' +
-	                   '<td><label id="' + itemRowIndex + '">' + "" + '</label></td>' +
-	                   '<td><label id="' + itemRowIndex + '">' + "" + '</label></td>' +
 	                   '<td><button href="#" class="btn-success" onclick="editItem('+itemRowIndex +')" data-toggle="modal" data-target="#modal-item"><i class="fa fa-pencil" ></i></button>' +
 	                   '<button href="#" onclick="deleteItem(this,' +itemRowIndex + ')"><i class="fa fa-times"></i></button></td>' +
 	                   '</tr>';
