@@ -14,9 +14,12 @@ $(document).ready(function(){
 		 var ana			=	$("#item_ana").val();
 		 var roti			=	$("#item_roti").val();
 		 var point			=	$("#item_point").val();
-		 var weight			=	((vori*960)+(ana*60)+(roti*10)+point);
+		 var weight			=	((vori*960)+(ana*60)+(roti*10)+(point*1));
 		 var sWeight		=	(vori+'.'+ana+'.'+roti+'.'+point);
-		 var estCutPoint 	=	(($("#c_vori").val())*960)+(($("#c_ana").val())*60)+(($("#c_roti").val())*10)+($("#c_point").val());
+		 var estCutPoint 	=	((($("#c_vori").val())*960)+
+				 				 (($("#c_ana").val())*60)+
+				 				 (($("#c_roti").val())*10)+
+				 				 (($("#c_point").val()*1)));
 		 var is_editItem 	=	$("#is_editItem").text();
 		 var rowIndexItem 	=	$("#rowIndexItem").text();
 		 

@@ -30,7 +30,7 @@ function saveVoucher(){
 	var v_ana=$("#v_ana").val();
 	var v_roti=$("#v_roti").val();
 	var v_point=$("#v_point").val();
-	var totalWeight = ((v_vori*960)+(v_ana*60)+(v_roti*10)+v_point);
+	var totalWeight = ((v_vori*960)+(v_ana*60)+(v_roti*10)+(v_point*1));
 	var sTotalWeight = (v_vori+'.'+ v_ana+'.'+ v_roti+'.'+v_point);
 	
 	var voucherData = {
