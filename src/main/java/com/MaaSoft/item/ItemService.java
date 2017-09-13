@@ -1,5 +1,7 @@
 package com.MaaSoft.item;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +35,21 @@ public class ItemService {
 
 	public void deleteItem(ItemEntity itemEntity) {
 		 itemDao.deleteItem(itemEntity);
+	}
+
+	public List<ItemEntity> getAllItemByVId(int id) {
+		
+		List<ItemEntity> ie=itemDao.getAllItemByVId(id);
+		
+		for(ItemEntity i : ie){
+			i.getEstCutPoint();
+			double point = (i.getEstCutPoint() % 10);
+			double roti = ((i.getEstCutPoint()/10)%6);
+			double ana = (((i.getEstCutPoint()/10)/6)%16);
+			double vori =(((i.getEstCutPoint()/10)/6)/16);
+			
+		}
+		return ie;
 	}
 
 }
