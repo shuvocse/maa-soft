@@ -23,7 +23,7 @@ public class VoucherEntity extends BaseInfo{
 	private double v_roti;
 	private double v_point;
 	private double totalActCutPoint;
-	private double totalWeight;
+	private int totalWeight;
 	private String sTotalWeight;
 	
 	@ManyToOne(optional = false)
@@ -32,7 +32,7 @@ public class VoucherEntity extends BaseInfo{
 	public VoucherEntity() {
 	}
 	public VoucherEntity(Integer voucherId, double point, double v_vori, double v_ana, double v_roti, double v_point,
-			double totalActCutPoint, double totalWeight, String sTotalWeight, CustomerEntity customerEntity) {
+			double totalActCutPoint, int totalWeight, String sTotalWeight, CustomerEntity customerEntity) {
 		this.voucherId = voucherId;
 		this.point = point;
 		this.v_vori = v_vori;
@@ -86,10 +86,10 @@ public class VoucherEntity extends BaseInfo{
 	public void setTotalActCutPoint(double totalActCutPoint) {
 		this.totalActCutPoint = totalActCutPoint;
 	}
-	public double getTotalWeight() {
+	public int getTotalWeight() {
 		return totalWeight;
 	}
-	public void setTotalWeight(double totalWeight) {
+	public void setTotalWeight(int totalWeight) {
 		this.totalWeight = totalWeight;
 	}
 	public String getsTotalWeight() {

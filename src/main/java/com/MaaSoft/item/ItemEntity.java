@@ -27,7 +27,7 @@ public class ItemEntity extends BaseInfo{
 	private String sWeight;
 	private String weight;
 	private double estCutPoint;
-	private double totalWeight;
+	private int totalWeight;
 	
 	@ManyToOne(optional = false)
 	@JoinColumn(name="voucherId")
@@ -45,7 +45,7 @@ public class ItemEntity extends BaseInfo{
 	}
 
 	public ItemEntity(Integer itemId, String estInch, double vori, double ana, double roti, double point,String sWeight, String weight,
-			double estCutPoint, double totalWeight, VoucherEntity voucherEntity, MachineTypeEntity machineTypeEntity,
+			double estCutPoint, int totalWeight, VoucherEntity voucherEntity, MachineTypeEntity machineTypeEntity,
 			ChainTypeEntity chainTypeEntity) {
 		this.itemId = itemId;
 		this.estInch = estInch;
@@ -135,11 +135,11 @@ public class ItemEntity extends BaseInfo{
 		this.estCutPoint = estCutPoint;
 	}
 
-	public double getTotalWeight() {
+	public int getTotalWeight() {
 		return totalWeight;
 	}
 
-	public void setTotalWeight(double totalWeight) {
+	public void setTotalWeight(int totalWeight) {
 		this.totalWeight = totalWeight;
 	}
 

@@ -20,6 +20,7 @@ $(document).ready(function(){
 				 				 (($("#c_ana").val())*60)+
 				 				 (($("#c_roti").val())*10)+
 				 				 (($("#c_point").val()*1)));
+		 var totalWeight 	=	(weight+estCutPoint);
 		 var is_editItem 	=	$("#is_editItem").text();
 		 var rowIndexItem 	=	$("#rowIndexItem").text();
 		 
@@ -35,7 +36,8 @@ $(document).ready(function(){
 				 'point' : point,
 				 'weight' : weight,
 				 'sWeight':sWeight,
-				 'estCutPoint' :estCutPoint
+				 'estCutPoint' :estCutPoint,
+				 'totalWeight' : totalWeight
 				 
 		 };
 
@@ -129,6 +131,10 @@ function resetItem() {
 	  $("#item_ana").val('');
 	  $("#item_roti").val('');
 	  $("#item_point").val('');
+	  $("#c_vori").val('');
+	  $("#c_ana").val('');
+	  $("#c_roti").val('');
+	  $("#c_point").val('');
 	  $("#is_editItem").text('0');
 	  $("#rowIndexItem").text('');
 }

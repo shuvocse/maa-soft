@@ -20,13 +20,17 @@
 				<td th:text="${item.estInch}"></td>
 				<td th:text="${item.chainTypeEntity.chainName}"></td>
 				<td th:text="${item.sWeight}"></td>
-				<!-- <td>
-				<div th:with="v=(${item.estCutPoint}/10)">
-					<div th:with="a=(${v})">
-					</div>
-				</div>
-				<span th:text="${c}"></span></td> -->
-				
+			
+			</tr>
+			
+			<tr>
+				<td>Return Weight:</td>
+				<td>
+					<span  th:text="${totalVori}"></span>.
+					<span th:text="${totalAna}"></span>.
+					<span th:text="${totalRoti}"></span>.
+					<span th:text="${totalPoint}"></span>
+				</td>
 			</tr>
 		</table>
 

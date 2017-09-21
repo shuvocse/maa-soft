@@ -46,6 +46,15 @@ public class voucherController {
 	public String showVoucher(Model model, @PathVariable int id){
 		
 		model.addAttribute("itemList", itemService.getAllItemByVId(id));
+		int t =itemService.getAllItemTotalByVId(id);
+		int totalPoint =(t % 10);
+		int totalRoti = ((t/10)%6);
+		int totalAna = (((t/10)/6)%16);
+		int totalVori =(((t/10)/6)/16);
+		model.addAttribute("totalVori", totalVori);
+		model.addAttribute("totalAna", totalAna);
+		model.addAttribute("totalRoti",totalRoti );
+		model.addAttribute("totalPoint", totalPoint);
 		model.addAttribute("voucher", voucherService.getVoucherById(id));
 		model.addAttribute("body", "voucher/show-voucher");
 		return "layout/default";
